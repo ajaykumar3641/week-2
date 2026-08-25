@@ -1,0 +1,27 @@
+import java.util.Arrays;
+
+class Solution {
+    public int largestAltitude(int[] gain) {
+        int maxAltitude = 0;   // starting altitude
+        int currentAltitude = 0;
+        
+        for (int g : gain) {
+            currentAltitude += g;          // update altitude
+            maxAltitude = Math.max(maxAltitude, currentAltitude); // track highest
+        }
+        
+        return maxAltitude;
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        
+        int[] gain1 = {-5, 1, 5, 0, -7};
+        System.out.println(sol.largestAltitude(gain1)); 
+        // Output: 1
+        
+        int[] gain2 = {-4, -3, -2, -1, 4, 3, 2};
+        System.out.println(sol.largestAltitude(gain2)); 
+        // Output: 0
+    }
+}

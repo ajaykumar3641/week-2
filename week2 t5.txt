@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br =
+            new BufferedReader(new InputStreamReader(System.in));
+
+        int n = Integer.parseInt(br.readLine().trim());
+
+        Set<String> set = new HashSet<>();
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < n; i++) {
+            String line = br.readLine().trim();
+
+            // Store the complete pair.
+            // Order matters: "ab cd" != "cd ab"
+            set.add(line);
+
+            result.append(set.size()).append('\n');
+        }
+
+        System.out.print(result);
+    }
+}
